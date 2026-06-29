@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Abelirre. Game Developer y Creador de Contenido.">
     <title>Abelirre | Portfolio</title>
     <link rel="icon" href="assets/images/Perfil_4.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/styles.css">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -22,9 +24,9 @@
             <ul class="nav-menu">
                 <li><a href="#inicio" class="nav-link">Inicio</a></li>
                 <li><a href="#about" class="nav-link">Sobre Mí</a></li>
-                <li><a href="#social-hero" class="nav-link">Mis Redes</a></li>
-                <li><a href="#youtube" class="nav-link">YouTube</a></li>
                 <li><a href="#projects" class="nav-link">Game Dev</a></li>
+                <li><a href="#youtube" class="nav-link">YouTube</a></li>
+                <li><a href="#social-hero" class="nav-link">Mis Redes</a></li>
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Menu">
@@ -36,71 +38,254 @@
     <section id="inicio" class="hero">
         <div class="hero-content">
             <img src="assets/images/Perfil_4.png" alt="Abelirre Logo" class="hero-logo">
-            <h1><span class="gradient-text">CREADOR DE CONTENIDO<br>GAME DEVELOPER</span></h1>
-            <p class="hero-subtitle">Cuento historias con significado mediante juegos, vídeos y música.<br>Pasión y disciplina.</p>
+            <div class="hero-titles">
+                <h1 class="gradient-text" style="margin-bottom: 0;">ABELIRRE</h1>
+                <span class="hero-overline" style="margin-bottom: 15px; margin-top: 5px;">Abel Ahímsa Martín</span>
+                <h2 class="hero-role gradient-text">Game Developer y Creador de Contenido</h2>
+            </div>
+            <p class="hero-subtitle">Cuento historias con significado mediante juegos, vídeos y música.<br>Pasión y
+                disciplina.</p>
             <div class="btn-group">
                 <a href="#about" class="btn btn-primary">Conóceme</a>
-                <a href="#youtube" class="btn btn-secondary">Mi portfolio</a>
+                <a href="#projects" class="btn btn-secondary">Mi Portfolio</a>
             </div>
         </div>
+
+        <div class="scroll-indicator-wrapper">
+            <div class="scroll-line"></div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+            <div class="scroll-line"></div>
+        </div>
+
+        <div class="status-text">
+            <span class="status-dot"></span> Open to Work: Madrid, Segovia, Salamanca & Remote
+        </div>
     </section>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <section id="about" class="section">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <h2 class="gradient-text">INTRODUCCIÓN</h2>
+                <h2 class="gradient-text">SOBRE MÍ</h2>
                 <p>Todo lo que me apasiona, me define y me mueve.</p>
             </div>
 
-            <div class="features-grid">
-                <div class="card animate-on-scroll">
-                    <div class="card-icon">🎮</div>
-                    <h3>Game Developer</h3>
-                    <p>
-                        Soy estudiante universitario en Diseño y Desarrollo de Videojuegos.<br><br>
-                        Llevo años desarrollando juegos por mi cuenta. Me interesa la forma de contar historias, transmitir emociones y crear entretenimiento de todas las formas posibles.<br> <br>
-                        Estoy aprendiendo Unity, Unreal Engine, Godot y muchas de las ramas del diseño de videojuegos (pixel art, 3D modeling, game desing, level design, etc).</p>
-                    </p>
+            <div class="bento-grid">
+                <!-- Perfil -->
+                <div class="bento-card bento-profile animate-on-scroll">
+                    <img src="assets/images/PFP_Abel.png" alt="Abelirre" class="profile-img">
+                    <div class="profile-info">
+                        <h3>¿Quién soy?</h3>
+                        <p>Soy estudiante universitario en Diseño y Desarrollo de Videojuegos, y creador
+                            de contenido en
+                            internet.</p>
+                        <p>Me interesa la forma de contar historias, transmitir emociones y crear entretenimiento de
+                            todas las formas posibles.</p>
+                    </div>
                 </div>
-                <div class="card animate-on-scroll">
-                    <div class="card-icon">📹</div>
-                    <h3>Creador de Contenido</h3>
-                    <p>
-                        Creo contenido en internet con el objetivo de mejorar mis habilidades de cinematografía, edición de vídeos, story telling y marketing.<br><br>
-                        Me apasiona todo el proceso creativo detrás de crear contenido de calidad para entretener a las personas. Edito vídeos, creo miniaturas y gráficos y 
-                        uso la música para generar inmersión.<br><br>
-                        También me interesa la ingeniería detrás de los vídeos: retención de audiencia, packaging, planificación y grabación.
-                    </p>
-                </div>
-                <div class="card animate-on-scroll">
-                    <div class="card-icon">💻</div>
+
+                <!-- Habilidades -->
+                <div class="bento-card bento-skills animate-on-scroll">
                     <h3>Mis Habilidades</h3>
-                    <p>
-                        Gracias a mis hobbies y estudios cuento con unos conocimientos amplios en:<br><br>
+                    <div class="skills-tags">
+                        <span class="skill-tag csharp">C# / C++</span>
+                        <span class="skill-tag unity">Unity</span>
+                        <span class="skill-tag unreal">Unreal Engine</span>
+                        <span class="skill-tag godot">Godot</span>
+                        <span class="skill-tag web">HTML / CSS / JS</span>
+                        <span class="skill-tag phaser">Phaser</span>
+                        <span class="skill-tag design">Blender / Aseprite</span>
+                        <span class="skill-tag blockbench">Blockbench</span>
+                        <span class="skill-tag video">Premiere Pro</span>
+                        <span class="skill-tag art">Photoshop</span>
+                        <span class="skill-tag claude">Claude Code</span>
+                        <span class="skill-tag ai">IA</span>
+                    </div>
+                </div>
 
-                        Creación de Contenido:<br>
-                        ➜ Adobe Premiere Pro<br>
-                        ➜ Photoshop<br>
-                        ➜ Marketing, Diseño Gráfico<br><br>
+                <!-- Educación -->
+                <div class="bento-card bento-edu animate-on-scroll">
+                    <h3>Educación</h3>
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <img src="assets/images/unirLogo.png" alt="Unir_Logo" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h4>Grado en Diseño y Desarrollo de Videojuegos</h4>
+                                <span class="timeline-date">2023 - Actual | UNIR</span>
+                                <p class="timeline-desc">Actualmente cursando 4º año.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="assets/images/uk_flag.png" alt="UK_Flag" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h4>Inglés C1</h4>
+                                <span class="timeline-date">2026 - En preparación</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="assets/images/serna_logo.jpg" alt="Serna_Logo" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h4>Bachillerato de Ciencias y Tecnología</h4>
+                                <span class="timeline-date">2021 - 2023 | IES La Serna - Fuenlabrada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                        Programación:<br>
-                        ➜ C, C++ y C#<br>
-                        ➜ HTML5, CSS, JavaScript, Phaser<br><br>
-                    
-                        Game Development:<br>
-                        ➜ Unreal Engine 5, Unity y Godot<br>
-                        ➜ Blender, Blockbench, Aseprite<br>
-                    </p>
+                <!-- Certificados -->
+                <div class="bento-card bento-certs animate-on-scroll">
+                    <h3>Certificados Oficiales</h3>
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <img src="assets/images/cambridge_logo.png" alt="Cambridge_Logo" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h4>Certificado Inglés B2</h4>
+                                <span class="timeline-date">Cambridge | 2020</span>
+                                <p class="timeline-desc">Nivel de inglés B2 (Upper-Intermediate).</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">➕</div>
+                            <div class="timeline-content">
+                                <h4>Buscando nuevos retos</h4>
+                                <span class="timeline-date">Próximamente</span>
+                                <p class="timeline-desc">Consiguiendo certificados de Programación, IA y Diseño.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiencia -->
+                <div class="bento-card bento-exp animate-on-scroll">
+                    <h3>Experiencia Laboral en el Sector</h3>
+                    <div class="timeline-list">
+                        <!-- Experiencia Videojuegos -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon">💼</div>
+                            <div class="timeline-content">
+                                <h4>Game Developer</h4>
+                                <span class="timeline-date">Buscando oportunidades en la industria. En busca de
+                                    prácticas universitarias.</span>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <h3>Otra Experiencia Laboral</h3>
+                        <!-- Otra experiencia -->
+                        <div class="timeline-item">
+                            <img src="assets/images/Logo-Alcampo.jpg" alt="Alcampo_Logo" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h4>Alcampo</h4>
+                                <span class="timeline-date">Mozo de Almacén / Reponedor | Ago 2025 - Oct 2025 |
+                                    Fuenlabrada</span>
+                                <!--<p class="timeline-desc">Reposición de productos, atención al cliente, tareas de almacén.
+                                </p>-->
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="assets/images/BK_logo.png" alt="BK_Logo" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h4>Burger King</h4>
+                                <span class="timeline-date">Cajero / Personal de Sala | Jul 2024 - Nov 2024 |
+                                    Fuenlabrada</span>
+                                <!-- <p class="timeline-desc">Cajero, personal de sala, limpieza, gestión de inventario.
+                                </p> -->
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="assets/images/KFC_logo.png" alt="KFC_Logo" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h4>KFC</h4>
+                                <span class="timeline-date">Cajero / Personal de Sala | Nov 2022 - Feb 2023 |
+                                    Fuenlabrada</span>
+                                <!-- <p class="timeline-desc">Cajero, personal de sala, limpieza, gestión de inventario.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="gradient-text">GAME DEV</h2>
+                <p>Videojuegos y experiencias interactivas desarrolladas por mí.</p>
+            </div>
+
+            <div id="featured-project-container" class="animate-on-scroll">
+                <!-- El proyecto principal se carga aquí por JS -->
+            </div>
+
+            <div class="projects-grid" id="games-container">
+                <!-- Resto de proyectos -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <section id="youtube" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="gradient-text">YOUTUBE Y ESTADÍSTICAS</h2>
+                <p>Crecimiento y contenido reciente de mi canal principal.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid animate-on-scroll" style="margin-bottom: 50px;">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <h3 id="stat-subs" class="stat-number gradient-text" data-target="15000">0</h3>
+                    <p>Suscriptores</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👁️</div>
+                    <h3 id="stat-views" class="stat-number gradient-text" data-target="2500000">0</h3>
+                    <p>Visitas Totales</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📹</div>
+                    <h3 id="stat-videos" class="stat-number gradient-text" data-target="120">0</h3>
+                    <p>Vídeos Publicados</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <h3 id="stat-hours" class="stat-number gradient-text" data-target="45000">0</h3>
+                    <p>Horas de Visualización</p>
+                </div>
+            </div>
+
+            <!-- Videos -->
+            <div class="section-box-container animate-on-scroll">
+                <h3 style="margin-bottom: 20px;">Últimos Vídeos</h3>
+                <div class="projects-grid smaller-grid" id="youtube-container">
+                    <div class="loading-spinner">Cargando vídeos...</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-3 animate-on-scroll">
+                <a href="https://www.youtube.com/@Abelirre" target="_blank" class="btn btn-secondary">Ver Canal
+                    Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <section id="social-hero" class="section">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <p><br></p>
-                <p><br></p>
                 <h2 class="gradient-text">MIS REDES SOCIALES</h2>
                 <p>Sígueme para no perderte nada de mi contenido.</p>
             </div>
@@ -130,7 +315,11 @@
 
                 <a href="https://twitter.com/abelirreften" target="_blank" class="social-hero-card twitter">
                     <div class="social-icon-large">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#ffffff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                            fill="#ffffff">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
                     </div>
                     <div class="social-info">
                         <h3>X (Twitter)</h3>
@@ -149,96 +338,66 @@
                     </div>
                     <div class="social-arrow">→</div>
                 </a>
+
+                <a href="https://www.linkedin.com/in/abel-ahimsa-martin-crego-1b8661397/" target="_blank"
+                    class="social-hero-card linkedin">
+                    <div class="social-icon-large">
+                        <svg xmlns="https://www.svgrepo.com/show/506517/linkedin.svg" width="40" height="40"
+                            viewBox="0 0 24 24" fill="#ffffff">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <h3>LinkedIn</h3>
+                        <p>Mi perfil profesional.</p>
+                    </div>
+                    <div class="social-arrow">→</div>
+                </a>
+
+                <a href="https://abelirre.itch.io/" target="_blank" class="social-hero-card itch">
+                    <div class="social-icon-large">
+                        <img src="https://www.svgrepo.com/show/452232/itch-io.svg" alt="Itch.io"
+                            style="filter: brightness(1) invert(0);">
+                    </div>
+                    <div class="social-info">
+                        <h3>Itch.io</h3>
+                        <p>Juega mis juegos.</p>
+                    </div>
+                    <div class="social-arrow">→</div>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="youtube" class="section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2 class="gradient-text">ÚLTIMOS VÍDEOS</h2>
-                <p>Contenido reciente subido a mi canal principal.</p>
-            </div>
-
-            <div class="section-box-container animate-on-scroll">
-                <div class="projects-grid smaller-grid" id="youtube-container">
-                    <div class="loading-spinner">Cargando vídeos...</div>
-                </div>
-            </div>
-    </section>
-
-    <section id="stats" class="section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2 class="gradient-text">ESTADÍSTICAS DEL CANAL</h2>
-                <p>Crecimiento en tiempo real de mi canal principal.</p>
-            </div>
-            <div class="stats-grid animate-on-scroll">
-                <div class="stat-card">
-                    <div class="stat-icon">👥</div>
-                    <h3 id="stat-subs" class="stat-number gradient-text">---</h3>
-                    <p>Suscriptores</p>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-icon">👁️</div>
-                    <h3 id="stat-views" class="stat-number gradient-text">---</h3>
-                    <p>Visitas Totales</p>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-icon">📹</div>
-                    <h3 id="stat-videos" class="stat-number gradient-text">---</h3>
-                    <p>Vídeos Publicados</p>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-icon">⏱️</div>
-                    <h3 id="stat-hours" class="stat-number gradient-text">---</h3>
-                    <p>Horas de Visualización</p>
-                </div>
-            </div>
-        </div>
-        <div class="container animate-on-scroll">
-            <div class="text-center mt-3">
-                <a href="https://www.youtube.com/@Abelirre" target="_blank" class="btn btn-secondary">Ver Canal Completo</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2 class="gradient-text">MIS PROYECTOS</h2>
-                <p>Videojuegos y experiencias interactivas desarrolladas por mí.</p>
-            </div>
-            <div class="projects-grid" id="games-container"></div>
-        </div>
-    </section>
-
-        <section id="contacto" class="section">
+    <section id="contacto" class="section">
         <div class="container">
             <div class="contact-card animate-on-scroll">
                 <h2 class="gradient-text">CONTÁCTAME</h2>
                 <p>¿Tienes preguntas, sugerencias o quieres colaborar?<br></p>
                 <p><br></p>
-                <a href="https://mail.google.com/mail/?view=cm&amp;to=abelirre@gmail.com" data-email="general" class="btn btn-primary" target="_blank" rel="noopener">Mandar un Email</a>
+                <a href="mailto:abelirre@gmail.com" class="btn btn-primary" target="_blank" rel="noopener">Mandar un
+                    Email</a>
                 <div class="social-links-row">
                     <a href="https://discord.com/invite/T73mS5b" target="_blank">Discord</a>
                     <a href="https://twitter.com/abelirreften" target="_blank">Twitter / X</a>
+                    <a href="https://www.linkedin.com/in/abel-ahimsa-martin-crego-1b8661397/?skipRedirect=true"
+                        target="_blank">LinkedIn</a>
                     <a href="https://www.instagram.com/abelirretv/" target="_blank">Instagram</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <footer class="footer">
         <div class="container text-center">
-            <p>&copy; 2026 Abelirre. Todos los derechos reservados.</p>
-            <p style="font-size: 0.8rem; color: var(--text-muted);">No se permite la copia de este sitio web.</p>
+            <p>&copy; 2026 Abelirre · Game Developer y Creador de Contenido · Madrid</p>
         </div>
     </footer>
 
     <script src="scripts/script.js"></script>
 </body>
+
 </html>
