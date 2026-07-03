@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "They Wont Retain Me",
             description: "El infierno no quiere que escapes. Sobrevive a hordas de pecadores y demonios mientras construyes builds cada vez más poderosas.",
             image: "assets/images/TWRM_Portada.png",
-            link: "https://lucas25gg.itch.io/they-wont-retain-me",
+            link: "https://abelirre.itch.io/they-wont-retain-me",
             isFeatured: false,
             isInDevelopment: false,
             tags: [{ name: "Unreal Engine", class: "t-unreal" }, { name: "3D", class: "t-3d" }, { name: "Acción", class: "t-accion" }, { name: "Survivor-like", class: "t-platformer" }],
