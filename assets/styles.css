@@ -143,6 +143,49 @@ h2 {
     color: #fff;
 }
 
+/* Language Switch */
+.lang-switch {
+    width: 60px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s;
+}
+
+.lang-switch:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lang-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 3px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.lang-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lang-switch.en .lang-circle {
+    transform: translateX(30px);
+}
+
 /* Mobile Menu Toggle */
 .nav-toggle {
     display: none;
@@ -872,7 +915,7 @@ body::after {
 /* --- BENTO GRID (ABOUT ME) --- */
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(200px, auto);
     gap: 20px;
     max-width: 1200px;
@@ -923,7 +966,7 @@ body::after {
 }
 
 .bento-skills {
-    grid-column: span 1;
+    grid-column: span 2;
     order: 2;
 }
 
@@ -935,13 +978,22 @@ body::after {
 }
 
 .skill-tag {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 .skill-tag.csharp {
@@ -1004,20 +1056,59 @@ body::after {
     color: #66ff99;
 }
 
+.skill-tag.blender {
+    border-color: #ea7600;
+    color: #ffb167;
+}
+
+.skill-tag.aseprite {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.skill-tag.krita {
+    border-color: #ff66b2;
+    color: #ff99cc;
+}
+
+.skill-tag.github {
+    border-color: #a453ec;
+    color: #c988fc;
+}
+
+.skill-tag.jira {
+    border-color: #2684ff;
+    color: #80bfff;
+}
+
+.skill-tag.fmod {
+    border-color: #ff8c00;
+    color: #ffb84d;
+}
+
+.skill-tag.wwise {
+    border-color: #4dc3ff;
+    color: #99dbff;
+}
+
+.skill-tag.obsS {
+    border-color: #b3b3b3;
+    color: #e6e6e6;
+}
+
 .bento-edu {
     grid-column: span 1;
-    order: 4;
+    order: 3;
 }
 
 .bento-certs {
     grid-column: span 1;
-    order: 5;
+    order: 4;
 }
 
 .bento-exp {
     grid-column: span 2;
-    grid-row: span 2;
-    order: 3;
+    order: 5;
 }
 
 .divider {
@@ -1075,7 +1166,7 @@ body::after {
     .bento-edu,
     .bento-certs,
     .bento-exp {
-        grid-column: span 3;
+        grid-column: span 2;
         grid-row: auto;
     }
 

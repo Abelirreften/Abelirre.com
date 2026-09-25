@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abelirre | Proyecto</title>
+    <link rel="icon" href="assets/images/Perfil_4.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        .project-hero {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 50px;
+            margin-top: 70px;
+        }
+        .project-hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            background-color: #2a2a3d;
+        }
+        .project-hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, var(--bg-primary) 0%, rgba(10, 10, 15, 0.4) 100%);
+            z-index: 2;
+        }
+        .project-hero-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+        .project-back {
+            display: inline-flex;
+            align-items: center;
+            color: var(--color-pink);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .project-back:hover {
+            color: #fff;
+            transform: translateX(-5px);
+        }
+        .project-info-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .project-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/Perfil_4.png" alt="Logo">
+                <span>Abelirre</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="index.html#projects" class="nav-link" data-i18n="nav_projects">Game Dev</a></li>
+                <li><a href="index.html#about" class="nav-link" data-i18n="nav_about">Sobre Mí</a></li>
+                <li><a href="index.html#social-hero" class="nav-link" data-i18n="nav_social">Mis Redes</a></li>
+                <li><a href="index.html#youtube" class="nav-link" data-i18n="nav_youtube">YouTube</a></li>
+                <li><a href="index.html#contacto" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
+            </ul>
+            <div class="lang-switch" id="langSwitch">
+                <div class="lang-circle" id="langCircle">
+                    <img src="https://flagcdn.com/w40/es.png" alt="ES" id="flagIcon">
+                </div>
+            </div>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="project-hero" id="project-hero">
+        <img id="project-bg" class="project-hero-bg" src="" alt="Fondo" onerror="this.src='https://placehold.co/1920x1080/2a2a3d/fff?text=No+Image';">
+        <div class="project-hero-overlay"></div>
+        <div class="container project-hero-content">
+            <a href="index.html#projects" class="project-back">← Volver al Portfolio</a>
+            <h1 id="project-title" class="gradient-text" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 10px;">Título del Proyecto</h1>
+            <div id="project-tags-container" class="project-tags" style="margin-bottom: 20px;">
+                <!-- Tags -->
+            </div>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <div class="project-info-grid">
+                <div class="project-main-content">
+                    <h2 class="gradient-text" style="margin-bottom: 20px;" data-i18n="project_about">Sobre el Proyecto</h2>
+                    <div id="project-extended-desc" style="line-height: 1.8; color: var(--text-secondary); font-size: 1.1rem;">
+                        <!-- Extended Desc -->
+                    </div>
+                </div>
+                <div class="project-sidebar">
+                    <div class="bento-card">
+                        <h3 data-i18n="project_details">Detalles</h3>
+                        <div id="project-stats" style="margin-top: 20px;">
+                            <!-- Stats -->
+                        </div>
+                        <div id="project-actions" style="margin-top: 30px;">
+                            <!-- Link -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p data-i18n="footer_text">&copy; 2026 Abelirre · Game Developer y Creador de Contenido · Madrid</p>
+        </div>
+    </footer>
+
+    <script src="scripts/data.js"></script>
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/project.js"></script>
+</body>
+</html>
