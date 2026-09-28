@@ -175,6 +175,35 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('project-actions').innerHTML = '';
         }
 
+        // --- BOTTOM NAVIGATION ---
+        const projectIndex = MY_GAMES.findIndex(g => g.id === project.id);
+        
+        const prevBtn = document.getElementById('nav-prev-project');
+        const prevTitle = document.getElementById('prev-project-title');
+        if (prevBtn && prevTitle) {
+            if (projectIndex > 0) {
+                const prevProject = MY_GAMES[projectIndex - 1];
+                prevBtn.href = `project.html?id=${prevProject.id}`;
+                prevTitle.textContent = getLangValue(prevProject, 'title');
+                prevBtn.style.visibility = 'visible';
+            } else {
+                prevBtn.style.visibility = 'hidden';
+            }
+        }
+
+        const nextBtn = document.getElementById('nav-next-project');
+        const nextTitle = document.getElementById('next-project-title');
+        if (nextBtn && nextTitle) {
+            if (projectIndex < MY_GAMES.length - 1) {
+                const nextProject = MY_GAMES[projectIndex + 1];
+                nextBtn.href = `project.html?id=${nextProject.id}`;
+                nextTitle.textContent = getLangValue(nextProject, 'title');
+                nextBtn.style.visibility = 'visible';
+            } else {
+                nextBtn.style.visibility = 'hidden';
+            }
+        }
+
         initLightbox();
     }
 
@@ -272,6 +301,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'ArrowLeft') prevImage();
             if (e.key === '+' || e.key === 'Add' || e.key === '=') zoomIn();
             if (e.key === '-' || e.key === 'Subtract') zoomOut();
+        });
+    }
+
+    const toTopBtn = document.getElementById('nav-to-top');
+    if (toTopBtn) {
+        toTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
