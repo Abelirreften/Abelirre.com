@@ -20,24 +20,34 @@
             padding-bottom: 50px;
             margin-top: 70px;
         }
+
         .project-hero-bg {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             z-index: 1;
             background-color: #2a2a3d;
         }
+
         .project-hero-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(to top, var(--bg-primary) 0%, rgba(10, 10, 15, 0.4) 100%);
             z-index: 2;
         }
+
         .project-hero-content {
             position: relative;
             z-index: 3;
             width: 100%;
         }
+
         .project-back {
             display: inline-flex;
             align-items: center;
@@ -47,16 +57,19 @@
             font-weight: 600;
             transition: 0.3s;
         }
+
         .project-back:hover {
             color: #fff;
             transform: translateX(-5px);
         }
+
         .project-info-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 40px;
             margin-top: 40px;
         }
+
         @media (max-width: 768px) {
             .project-info-grid {
                 grid-template-columns: 1fr;
@@ -92,11 +105,13 @@
     </nav>
 
     <header class="project-hero" id="project-hero">
-        <img id="project-bg" class="project-hero-bg" src="" alt="Fondo" onerror="this.src='https://placehold.co/1920x1080/2a2a3d/fff?text=No+Image';">
+        <img id="project-bg" class="project-hero-bg"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Fondo">
         <div class="project-hero-overlay"></div>
         <div class="container project-hero-content">
             <a href="index.html#projects" class="project-back">← Volver al Portfolio</a>
-            <h1 id="project-title" class="gradient-text" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 10px;">Título del Proyecto</h1>
+            <h1 id="project-title" class="gradient-text"
+                style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 10px;">Título del Proyecto</h1>
             <div id="project-tags-container" class="project-tags" style="margin-bottom: 20px;">
                 <!-- Tags -->
             </div>
@@ -107,9 +122,51 @@
         <div class="container">
             <div class="project-info-grid">
                 <div class="project-main-content">
-                    <h2 class="gradient-text" style="margin-bottom: 20px;" data-i18n="project_about">Sobre el Proyecto</h2>
-                    <div id="project-extended-desc" style="line-height: 1.8; color: var(--text-secondary); font-size: 1.1rem;">
+                    <h2 class="gradient-text" style="margin-bottom: 20px;" data-i18n="project_about">Sobre el Proyecto
+                    </h2>
+                    <div id="project-extended-desc"
+                        style="line-height: 1.8; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px;">
                         <!-- Extended Desc -->
+                    </div>
+
+                    <!-- Novedades de la Plantilla -->
+                    <div id="project-trailer-container" style="display: none; margin-bottom: 40px;">
+                        <h3 class="gradient-text" style="margin-bottom: 20px;" data-i18n="project_trailer">Tráiler</h3>
+                        <div id="project-trailer" class="video-container"></div>
+                    </div>
+
+                    <div id="project-screenshots-container" style="display: none; margin-bottom: 40px;">
+                        <h3 class="gradient-text" style="margin-bottom: 20px;" data-i18n="project_screenshots">Capturas
+                            del Juego</h3>
+                        <div id="project-screenshots" class="screenshots-gallery"></div>
+                    </div>
+
+                    <div id="project-role-container" style="display: none; margin-bottom: 40px;">
+                        <h2 class="gradient-text" style="margin-bottom: 20px;" data-i18n="project_role">Mi Rol en el
+                            Desarrollo</h2>
+                        <div class="bento-card" style="padding: 25px;">
+                            <h4 id="project-role-title"
+                                style="font-size: 1.3rem; margin-bottom: 10px; color: var(--color-pink);"></h4>
+                            <p id="project-role-desc" style="line-height: 1.6; color: var(--text-secondary);"></p>
+                            <div id="project-role-images" class="images-grid" style="display: none; margin-top: 20px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="project-skills-container" style="display: none; margin-bottom: 40px;">
+                        <h3 class="gradient-text" style="margin-bottom: 20px;" data-i18n="project_skills">Habilidades
+                            Aprendidas</h3>
+                        <div class="bento-card" style="padding: 25px;">
+                            <p id="project-skills" style="line-height: 1.6; color: var(--text-secondary);"></p>
+                            <div id="project-skills-images" class="images-grid"
+                                style="display: none; margin-top: 20px;"></div>
+                        </div>
+                    </div>
+
+                    <div id="project-challenges-container" style="display: none; margin-bottom: 40px;">
+                        <h3 class="gradient-text" style="margin-bottom: 20px;" data-i18n="project_challenges">Problemas
+                            Técnicos Resueltos</h3>
+                        <div id="project-challenges" style="display: flex; flex-direction: column; gap: 15px;"></div>
                     </div>
                 </div>
                 <div class="project-sidebar">
@@ -133,8 +190,24 @@
         </div>
     </footer>
 
+    <!-- Visor de Imágenes (Lightbox) -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content" id="lightbox-content">
+            <img id="lightbox-img" src="" alt="Visor de imagen">
+        </div>
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+        <div class="lightbox-controls">
+            <button id="lb-prev" class="lb-btn" title="Anterior">←</button>
+            <button id="lb-zoom-out" class="lb-btn" title="Reducir Zoom">-</button>
+            <button id="lb-close" class="lb-btn lb-close-btn" title="Cerrar">✕</button>
+            <button id="lb-zoom-in" class="lb-btn" title="Aumentar Zoom">+</button>
+            <button id="lb-next" class="lb-btn" title="Siguiente">→</button>
+        </div>
+    </div>
+
     <script src="scripts/data.js"></script>
     <script src="scripts/i18n.js"></script>
     <script src="scripts/project.js"></script>
 </body>
+
 </html>

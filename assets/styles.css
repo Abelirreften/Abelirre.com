@@ -1472,3 +1472,170 @@ body::after {
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
     }
 }
+
+/* --- PROJECT TEMPLATE EXTRA STYLES --- */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.screenshots-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.screenshots-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    object-fit: cover;
+}
+
+.screenshots-gallery img:hover {
+    transform: scale(1.02);
+    border-color: var(--color-purple);
+}
+
+.challenge-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--color-pink);
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.challenge-tag {
+    display: inline-block;
+    background: var(--color-pink);
+    color: #000;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+/* Images Grid */
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.images-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.images-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* --- LIGHTBOX --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-origin: center center;
+}
+
+.lightbox-controls {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(20, 20, 30, 0.8);
+    border: 1px solid var(--color-pink);
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.lb-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.lb-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-pink);
+}
+
+.lb-close-btn {
+    font-size: 1.2rem;
+    background: rgba(230, 50, 80, 0.2);
+    border: 1px solid rgba(230, 50, 80, 0.4);
+    margin: 0 10px;
+}
+
+.lb-close-btn:hover {
+    background: rgba(230, 50, 80, 0.4);
+    color: #fff;
+}
+ / *   - - -   P R O J E C T   T E M P L A T E   E X T R A   S T Y L E S   - - -   * / 
+
+.lightbox-caption { color: var(--text-secondary); text-align: center; margin-top: 15px; font-size: 1rem; max-width: 80%; min-height: 24px; }
+.image-caption-container { display: flex; flex-direction: column; align-items: center; margin-bottom: 15px; }
+.image-caption { color: var(--text-secondary); font-size: 0.85rem; text-align: center; margin-top: 8px; font-style: italic; }
