@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Abelirre - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base / Reset */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0f;
+            color: #d0d0e0;
+            margin: 0 auto;
+            padding: 0;
+            width: 210mm;
+            min-height: 297mm;
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        /* Contenedor principal para simular la página */
+        .cv-page {
+            width: 100%;
+            height: 100%;
+            padding: 10mm 15mm;
+            background-color: #0a0a0f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Tipografía y acentos */
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            color: #ffffff;
+        }
+        .pink-text {
+            color: #ee07fe;
+        }
+
+        .gradient-text {
+            color: #ee07fe;
+            background: linear-gradient(90deg, #6400FF, #ee07fe, #fe8948);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #ee07fe;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .header-contact {
+            margin-top: 4px;
+            font-size: 11px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            color: #a0a0b0;
+        }
+        .header-contact a {
+            color: #d0d0e0;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .header-contact a:hover {
+            color: #ee07fe;
+        }
+
+        /* Profile */
+        .profile {
+            font-size: 12px;
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+
+        /* Secciones */
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(238, 7, 254, 0.4);
+            padding-bottom: 2px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .skills-col {
+            font-size: 11px;
+        }
+        .skills-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skills-col li {
+            margin-bottom: 3px;
+            position: relative;
+            padding-left: 14px;
+        }
+        .skills-col li::before {
+            content: '•';
+            color: #ee07fe;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Experiencia */
+        .experience-item {
+            margin-bottom: 10px;
+        }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        .exp-role-company {
+            font-size: 13px;
+        }
+        .exp-role {
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .exp-company {
+            color: #a0a0b0;
+            font-weight: 500;
+        }
+        .exp-meta {
+            font-size: 10px;
+            color: #a0a0b0;
+            font-weight: 500;
+            text-align: right;
+        }
+        .exp-desc {
+            font-size: 11px;
+            color: #d0d0e0;
+            margin-top: 2px;
+        }
+        .exp-desc ul {
+            margin: 0;
+            padding-left: 16px;
+        }
+        .exp-desc li {
+            margin-bottom: 2px;
+        }
+
+        /* Educación */
+        .edu-item {
+            margin-bottom: 8px;
+        }
+        .edu-item .exp-desc {
+            margin-top: 2px;
+        }
+
+        /* Información Adicional */
+        .additional-info {
+            font-size: 11px;
+        }
+        .additional-info p {
+            margin: 0 0 2px 0;
+        }
+        
+        /* Botón oculto para imprimir - solo se ve en pantalla */
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ee07fe;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(238, 7, 254, 0.4);
+            z-index: 1000;
+        }
+        .print-btn:hover {
+            background: #ff4766;
+        }
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                background-color: #ffffff !important;
+            }
+            .cv-page {
+                padding: 10mm;
+            }
+        }
+        
+        /* Light Theme */
+        body.light-theme {
+            background-color: #ffffff !important;
+            color: #1a1a1a;
+        }
+        body.light-theme .cv-page {
+            background-color: #ffffff !important;
+        }
+        body.light-theme h1, 
+        body.light-theme h2, 
+        body.light-theme h3, 
+        body.light-theme h4, 
+        body.light-theme h5, 
+        body.light-theme h6,
+        body.light-theme .exp-role {
+            color: #111111;
+        }
+        body.light-theme .header-contact {
+            color: #666666;
+        }
+        body.light-theme .header-contact a {
+            color: #111111;
+        }
+        body.light-theme .header-contact a:hover {
+            color: #ee07fe;
+        }
+        body.light-theme .exp-desc,
+        body.light-theme .profile,
+        body.light-theme .skills-col,
+        body.light-theme .additional-info {
+            color: #333333;
+        }
+        body.light-theme .exp-company,
+        body.light-theme .exp-meta {
+            color: #555555;
+        }
+    
+        @media print {
+            .print-btn { display: none; }
+            html { background-color: #0a0a0f !important; }
+            body { background-color: #0a0a0f !important; margin: 0; padding: 0; min-height: 297mm; height: 100%; }
+            html.light-theme, body.light-theme { background-color: #ffffff !important; }
+            .cv-page { padding: 10mm; min-height: 297mm; background-color: transparent !important; }
+    
+        }
+    
+        /* Modo Blanco y Negro */
+        body.bw-mode .gradient-text { background: none !important; -webkit-background-clip: unset !important; -webkit-text-fill-color: unset !important; color: #ffffff !important; }
+        body.bw-mode.light-theme .gradient-text { color: #000000 !important; }
+        body.bw-mode .pink-text { color: #ffffff !important; }
+        body.bw-mode.light-theme .pink-text { color: #000000 !important; }
+        body.bw-mode header { border-bottom: 2px solid #555555 !important; }
+        body.bw-mode.light-theme header { border-bottom: 2px solid #cccccc !important; }
+        body.bw-mode .section-title { border-bottom: 1px solid #555555 !important; }
+        body.bw-mode.light-theme .section-title { border-bottom: 1px solid #cccccc !important; }
+        body.bw-mode .skills-col li::before { color: #ffffff !important; }
+        body.bw-mode.light-theme .skills-col li::before { color: #000000 !important; }
+
+        
+        body.bw-mode .header-contact a { color: #ffffff !important; }
+        body.bw-mode.light-theme .header-contact a { color: #000000 !important; }
+    
+        /* Print Modal */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
+        .modal.active { display: flex; }
+        .modal-content { background-color: #1a1a24; padding: 25px; border-radius: 12px; text-align: center; max-width: 400px; border: 1px solid #ee07fe; color: #ffffff; }
+        body.light-theme .modal-content { background-color: #f5f5f5; border: 1px solid #ccc; color: #111111; }
+        .modal-content h3 { margin-bottom: 15px; margin-top: 0; }
+        .modal-content p { font-size: 13px; margin-bottom: 20px; color: #a0a0b0; }
+        body.light-theme .modal-content p { color: #555555; }
+        .modal-content button { display: block; width: 100%; padding: 12px; margin-bottom: 10px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; transition: 0.2s; }
+        .modal-content button:nth-of-type(1) { background: #ee07fe; color: #fff; }
+        .modal-content button:nth-of-type(2) { background: #555555; color: #fff; }
+        body.light-theme .modal-content button:nth-of-type(2) { background: #bbbbbb; color: #000; }
+        .modal-content button.btn-cancel { background: transparent; border: 1px solid #555; color: #a0a0b0; }
+    
+    </style>
+</head>
+<body class="light-theme">
+
+    <button class="print-btn" onclick="window.location.href='index.html'" style="left: 20px; right: auto; bottom: 20px; background: #333333;">Back to Portfolio</button>
+    <button class="print-btn" onclick="window.location.href='resume.html'" style="bottom: 70px; background: #6400FF;">Spanish Version</button>
+    <button class="print-btn" onclick="toggleTheme()" style="bottom: 120px; background: #fe8948;">Light / Dark Mode</button>
+    <button class="print-btn" onclick="openPrintModal()">Save as PDF</button>
+
+    <div class="cv-page">
+        <header>
+            <h1 class="gradient-text">ABEL AHIMSA MARTÍN CREGO</h1>
+            <div class="header-contact">
+                <span>Madrid, Spain</span>
+                <span class="pink-text">•</span>
+                <a href="https://abelirreften.github.io/Abelirre.com/" target="_blank">Portfolio</a>
+                <span class="pink-text">•</span>
+                <a href="https://abelirre.itch.io" target="_blank">Itch.io</a>
+                <span class="pink-text">•</span>
+                <a href="https://www.linkedin.com/in/abel-ahimsa-martin-crego" target="_blank">LinkedIn</a>
+                <span class="pink-text">•</span>
+                <span>abelirre@gmail.com</span>
+            </div>
+        </header>
+
+        <div class="profile">
+            <strong class="pink-text">Game Developer & Content Creator</strong> focused on technical and artistic development. I am interested in storytelling, transmitting emotions, and creating entertainment in all possible forms, ranging from programming and mechanics design to 3D/2D art and video editing. I work fluently with <strong>Unity, Unreal Engine, and Godot</strong>, adapting to the project needs.
+        </div>
+
+        <h2 class="section-title gradient-text">Areas of Expertise</h2>
+        <div class="skills-grid">
+            <div class="skills-col">
+                <ul>
+                    <li>C# / C++</li>
+                    <li>Unity</li>
+                    <li>Unreal Engine</li>
+                    <li>Godot Engine</li>
+                </ul>
+            </div>
+            <div class="skills-col">
+                <ul>
+                    <li>Blender (3D Modeling and Retopology)</li>
+                    <li>Aseprite (Pixel Art and Animation)</li>
+                    <li>Photoshop / Krita (Texturing / Concept)</li>
+                    <li>Blockbench</li>
+                </ul>
+            </div>
+            <div class="skills-col">
+                <ul>
+                    <li>Systems and Mechanics Design (Game Design)</li>
+                    <li>HTML / CSS / JS</li>
+                    <li>Adobe Premiere Pro (Video Editing)</li>
+                    <li>AI Systems (Claude, Gemini)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title gradient-text">Developed Projects Experience</h2>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div class="exp-role-company">
+                    <span class="exp-role">Producer, Creative Director, 2D Artist and Programmer</span> <span class="exp-company">| Final Degree Project</span>
+                </div>
+                <div class="exp-meta">In development | Unity Engine</div>
+            </div>
+            <div class="exp-desc">
+                <ul>
+                    <li>Design and development of a metroidvania based on Brandon Sanderson's 'Mistborn' allomantic system and Blasphemous II.</li>
+                    <li>Development of 2D art, animation, and programming of core mechanics for fluid character movement.</li>
+                    <li>Design and implementation of state machines for characters, enemies, and game systems.</li>
+                    <li>Leadership in creative direction and project production within a two-developer team.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div class="exp-role-company">
+                    <span class="exp-role">3D Artist</span> <span class="exp-company">| They Wont Retain Me</span>
+                </div>
+                <div class="exp-meta">Finished (3 months) | Unreal Engine</div>
+            </div>
+            <div class="exp-desc">
+                <ul>
+                    <li>Development of an intense 3D roguelite shooter (survivor-like) based on Dante's circles of hell.</li>
+                    <li>Complete creation of the protagonist and weapons from scratch, adapting 2D concept art to game-engine ready 3D models.</li>
+                    <li>Blender modeling with optimized geometry (no Ngons), UV layout, and HD & Pixel Art texturing.</li>
+                    <li>Functional rigging of characters and enemies for implementation and animation in Unreal Engine.</li>
+                    <li>Creation of the studio logo and official trailer montage in Adobe Premiere Pro.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div class="exp-role-company">
+                    <span class="exp-role">2D Pixel Artist</span> <span class="exp-company">| Blood Runner</span>
+                </div>
+                <div class="exp-meta">Finished (3 months) | Godot Engine</div>
+            </div>
+            <div class="exp-desc">
+                <ul>
+                    <li>Development of a frantic 2D pixel art platformer where the player must absorb blood to survive.</li>
+                    <li>Character design, color palette, and animation (squash & stretch, anticipation) of all game enemies.</li>
+                    <li>Creation of backgrounds for levels and cinematics, as well as the design and implementation of the entire User Interface (UI).</li>
+                    <li>Planning, gameplay recording, music editing, and trailer montage in Adobe Premiere Pro.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="exp-header">
+                <div class="exp-role-company">
+                    <span class="exp-role">Game Developer</span> <span class="exp-company">| Desinformator</span>
+                </div>
+                <div class="exp-meta">Game Jam (7 days) | Godot Engine</div>
+            </div>
+            <div class="exp-desc">
+                <ul>
+                    <li>Rapid prototyping of a 3D first-person game focused on misinforming and manipulating the masses through the media.</li>
+                    <li>Record-time development of game systems and credibility metrics to evaluate the success of misinformation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="section-title gradient-text">Education</h2>
+        <div class="experience-item edu-item">
+            <div class="exp-header">
+                <div class="exp-role-company">
+                    <span class="exp-role">Bachelor's Degree in Video Game Design and Development - UNIR</span>
+                </div>
+                <div class="exp-meta">Currently</div>
+            </div>
+            <div class="exp-desc">
+                Acquiring a solid technical, narrative, and artistic foundation in multidisciplinary video game development.
+            </div>
+        </div>
+
+        <h2 class="section-title gradient-text">Additional Information</h2>
+        <div class="additional-info">
+            <p><strong class="pink-text">Languages:</strong> Spanish (Native), English (B2 level, studying for C1).</p>
+            <p><strong class="pink-text">Additional Interests:</strong> YouTube content creation, Video editing, Immersive narratives.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                localStorage.setItem('cv-theme', 'light');
+            if (document.body.classList.contains('light-theme')) {
+                document.documentElement.classList.add('light-theme');
+            } else {
+                document.documentElement.classList.remove('light-theme');
+            }
+    
+            } else {
+                localStorage.setItem('cv-theme', 'dark');
+            if (document.body.classList.contains('light-theme')) {
+                document.documentElement.classList.add('light-theme');
+            } else {
+                document.documentElement.classList.remove('light-theme');
+            }
+    
+            }
+        }
+        
+        // Initialize theme from localStorage (default to light)
+        let savedTheme = localStorage.getItem('cv-theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.remove('light-theme');
+        } else {
+            document.body.classList.add('light-theme');
+            localStorage.setItem('cv-theme', 'light');
+            if (document.body.classList.contains('light-theme')) {
+                document.documentElement.classList.add('light-theme');
+            } else {
+                document.documentElement.classList.remove('light-theme');
+            }
+    
+        }
+    
+        function openPrintModal() { document.getElementById('print-modal').classList.add('active'); }
+        function closePrintModal() { document.getElementById('print-modal').classList.remove('active'); }
+        function printWithMode(mode) {
+            closePrintModal();
+            if (mode === 'bw') { document.body.classList.add('bw-mode'); }
+            window.print();
+            if (mode === 'bw') {
+                setTimeout(() => document.body.classList.remove('bw-mode'), 1000);
+            }
+        }
+    
+    </script>
+
+    <div id="print-modal" class="modal">
+        <div class="modal-content">
+            <h3>PDF Options</h3>
+            <p>Choose how you want to export the resume. If you choose black and white, gradients and colors will be changed to plain text for clarity.</p>
+            <button onclick="printWithMode('color')">Color (Keep design)</button>
+            <button onclick="printWithMode('bw')">Black and White (Plain)</button>
+            <button onclick="closePrintModal()" class="btn-cancel">Cancel</button>
+        </div>
+    </div>
+
+</body>
+</html>

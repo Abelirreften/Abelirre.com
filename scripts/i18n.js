@@ -10,7 +10,7 @@ const translations = {
         hero_subtitle: "Cuento historias con significado mediante juegos, vídeos y música.<br>Pasión y disciplina.",
         btn_about: "Conóceme",
         btn_portfolio: "Porfolio",
-        btn_cv: "Descargar CV",
+        btn_cv: "Currículum",
         hero_status: "Madrid, ES · Open to Work: Remote & Relocate",
         title_projects: "GAME DEV",
         desc_projects: "Videojuegos y experiencias interactivas desarrolladas por mí.",
@@ -64,7 +64,7 @@ const translations = {
         title_contact: "CONTÁCTAME",
         desc_contact: "¿Tienes preguntas, sugerencias o quieres colaborar?<br>",
         btn_email: "Mandar un Email",
-        footer_text: "&copy; 2026 Abelirre · Game Developer y Creador de Contenido · Madrid"
+        footer_text: "&copy; 2026 Abelirre · Game Developer y Creador de Contenido · Madrid <br>•<br> Web creada en Diciembre de 2025, cualquier porfolio parecido es una copia."
     },
     en: {
         nav_home: "Home",
@@ -77,7 +77,7 @@ const translations = {
         hero_subtitle: "Telling meaningful stories through games, videos, and music.<br>Passion and discipline.",
         btn_about: "About Me",
         btn_portfolio: "Portfolio",
-        btn_cv: "Download CV",
+        btn_cv: "Resume (CV)",
         hero_status: "Madrid, ES · Open to Work: Remote & Relocate",
         title_projects: "GAME DEV",
         desc_projects: "Video games and interactive experiences developed by me.",
@@ -131,7 +131,7 @@ const translations = {
         title_contact: "CONTACT ME",
         desc_contact: "Do you have questions, suggestions, or want to collaborate?<br>",
         btn_email: "Send an Email",
-        footer_text: "&copy; 2026 Abelirre · Game Developer & Content Creator · Madrid"
+        footer_text: "&copy; 2026 Abelirre · Game Developer & Content Creator · Madrid <br>•<br> Web created in December 2025, any similar-looking portfolio is a copy."
     }
 };
 

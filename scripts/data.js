@@ -771,7 +771,8 @@ const MY_GAMES = [
             { tag: "Máquina de Estados", description: "Implementación de una máquina de estados para el enemigo, con estados de patrulla, búsqueda, seguimiento y ataque." },
             { tag: "Colisiones", description: "Detección y optimización de las colisiones para evitar fallos y tener un buen funcionamiento con el RigidBody del personaje." },
             { tag: "Triggers y Raycasts", description: "Uso de Triggers y Raycasts para detectar las trampas, el área de visión del enemigo y las interacciones del personaje." },
-            { tag: "Optimización", description: "Optimizar los modelos con LODs, los tamaños y compresiones de las texturas, y la iluminación con Lightmaps y Baking." }
+            { tag: "Optimización", description: "Optimizar los modelos con LODs, los tamaños y compresiones de las texturas, y la iluminación con Lightmaps y Baking." },
+            { tag: "Optimización Web", description: "El juego está optimizado para poder funcionar en navegador." }
 
         ],
         techChallenges_en: [
@@ -780,7 +781,133 @@ const MY_GAMES = [
             { tag: "State Machine", description: "Implementation of a state machine for the enemy, with patrol, search, pursuit and attack states." },
             { tag: "Collisions", description: "Detection and optimization of collisions to avoid failures and have a good functioning with the character's RigidBody." },
             { tag: "Triggers and Raycasts", description: "Use of Triggers and Raycasts to detect traps, the enemy's field of vision and the character's interactions." },
-            { tag: "Optimization", description: "Optimization of models with LODs, sizes and compressions of textures, and lighting with Lightmaps and Baking." }
+            { tag: "Optimization", description: "Optimization of models with LODs, sizes and compressions of textures, and lighting with Lightmaps and Baking." },
+            { tag: "Web Optimization", description: "The game is optimized to run in a web browser." }
+        ],
+
+        type: "Uni Project"
+    },
+    {
+        id: "knightAdventure",
+        title: "A Knight Adventure",
+        title_en: "A Knight Adventure",
+        description: "Un caballero debe superar distintos niveles y enemigos hasta llegar a la meta final. Juego de plataformas 2D para navegador.",
+        description_en: "A knight must overcome different levels and enemies to reach the final goal. 2D platformer game for web browsers.",
+
+        extendedDescription: `Un caballero debe superar distintos niveles y enemigos hasta llegar a la meta final.
+        <br><br>
+        El objetivo de este proyecto ha sido aprender los lenguajes HTML5, CSS, JavaScript y el motor / librería Phaser y entender cómo crear unas físicas simples 
+        (gravedad, saltos, colisiones, etc), animaciones y un sistema de control para un juego pensado para navegador. Ha sido mi primera vez creando un juego de 
+        navegador y mi primer contacto con los lenguajes web.
+        <br><br>
+        El juego lo desarrollé en dos semanas aproximadamente. Mis herramientas principales para desarrollarlo han sido:
+        <br>• HTML5
+        <br>• CSS
+        <br>• JavaScript
+        <br>• Phaser
+        <br>• Tiled para crear los niveles`,
+
+        extendedDescription_en: `A knight must overcome different levels and enemies to reach the final goal.
+        <br><br>
+        The objective of this project has been to learn HTML5, CSS, JavaScript and the Phaser engine / library and understand how to create simple physics
+        (gravity, jumps, collisions, etc), animations and a control system for a game designed for the browser. It has been my first time creating a browser game and my first contact with web languages.
+        <br><br>
+        I developed the game in approximately two weeks. My main tools for developing it have been:
+        <br>• HTML5
+        <br>• CSS
+        <br>• JavaScript
+        <br>• Phaser
+        <br>• Tiled to create the levels`,
+
+        image: "assets/images/KnightAdventure/KA_Portada.png",
+        coverImage: "assets/images/KnightAdventure/KA_Cover.png",
+
+        link: "https://abelirre.itch.io/the-warehouse",
+        isFeatured: false,
+        isInDevelopment: false,
+        tags: [{ name: "Phaser, JavaScript, HTML5", class: "t-phaser" }, { name: "2D", class: "t-2d" }, { name: "Pixel Art", class: "t-pixel" }, { name: "Plataformas", class: "t-platformer" }],
+        duration: "2 semanas",
+        duration_en: "2 weeks",
+        status: "Acabado",
+        status_en: "Finished",
+        trailer: "",
+
+        screenshots: [
+            {
+                src: "assets/images/KnightAdventure/KA_Img1.png",
+                caption: "Inicio del nivel",
+                caption_en: "Level Start"
+            },
+            {
+                src: "assets/images/KnightAdventure/KA_Img2.png",
+                caption: "Nivel de desierto",
+                caption_en: "Desert Level"
+            },
+            {
+                src: "assets/images/KnightAdventure/KA_Img3.png",
+                caption: "Nivel de hielo",
+                caption_en: "Ice Level"
+            },
+            {
+                src: "assets/images/KnightAdventure/KA_Img4.png",
+                caption: "Nivel de fuego",
+                caption_en: "Fire Level"
+            },
+        ],
+
+
+        roleImage: "",
+        role: {
+            title: "Programador, Diseñador de Niveles",
+            description: `Toda la programación del juego está hecha por mi, al igual que los niveles. Muchos de los assets son externos aunque algunos son creados por mi 
+            (los pinchos, las columnas naranjas del bioma de fuego, las rocas agrietadas grises y las columnas con pinchos del bioma de fuego).`
+        },
+        role_en: {
+            title: "Programmer, Level Designer",
+            description: `All the programming in the game is done by me, as well as the levels. Many of the assets are external, although some are created by me
+            (the spikes, the orange columns in the fire biome, the grey cracked rocks and the columns with spikes in the fire biome).`
+        },
+        skillsImage: [
+            {
+                src: "https://img.itch.zone/aW1hZ2UvMjg3NjgvNjcwOTYyLnBuZw==/original/JCgaka.png",
+                caption: "Tiled (Imagen de google)",
+                caption_en: "Tiled (Image from Google)"
+            },
+        ],
+
+        skillsLearned: `
+            • HTML5, CSS y JavaScript.
+            <br>• Phaser.
+            <br>• Tiled y su sistema de Tilemaps.
+            <br>• IDs de tiles y cómo usarlos.
+            <br>• Físicas 2D (gravedad, colisiones, saltos, etc).
+            <br>• Animaciones y uso de spritesheets.
+            <br>• Implementación de sonidos.
+            <br>• Sistemas de control básicos para juegos de navegador.`,
+
+        skillsLearned_en: `
+            • HTML5, CSS and JavaScript.
+            <br>• Phaser.
+            <br>• Tiled and its Tilemap system.
+            <br>• Tile IDs and how to use them.
+            <br>• 2D Physics (gravity, collisions, jumps, etc).
+            <br>• Animations and use of spritesheets.
+            <br>• Sound implementation.
+            <br>• Basic control systems for browser games.`,
+
+        techChallenges: [
+            { tag: "Físicas 2D", description: "Implementar la gravedad, saltos y colisiones para el personaje y enemigos." },
+            { tag: "Tilemaps", description: "• Creación del Tilemap con Tiled y uso de IDs de los tiles para detectar qué tiles hacen daño al jugador y cuales no.<br>• Capas de tiles para decoración (árboles y arbustos) y 'suelo' del nivel" },
+            { tag: "Colisiones", description: "Detección de las colisiones con los enemigos, el suelo y los tiles concretos que dañan al jugador." },
+            { tag: "Optimización Web", description: "El juego está pensado para funcionar en navegador y ser ligero." }
+
+        ],
+        techChallenges_en: [
+            { tag: "2D Physics", description: "Implement the gravity, jumps and collisions for the character and enemies." },
+            { tag: "Tilemaps", description: "• Creation of Tilemap with Tiled and use of tile IDs to detect which tiles damage the player and which do not.<br>• Tile layers for decoration (trees and bushes) and the level's 'ground'." },
+            { tag: "Collisions", description: "Detection of collisions with enemies, ground and specific tiles that damage the player." },
+            { tag: "Web Optimization", description: "The game is designed to run in a web browser and be light." }
+
         ],
 
         type: "Uni Project"
