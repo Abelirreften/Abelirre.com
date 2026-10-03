@@ -827,7 +827,7 @@ const MY_GAMES = [
         image: "assets/images/KnightAdventure/KA_Portada.png",
         coverImage: "assets/images/KnightAdventure/KA_Cover.png",
 
-        link: "https://abelirre.itch.io/the-warehouse",
+        link: "https://abelirre.itch.io/a-knight-adventure",
         isFeatured: false,
         isInDevelopment: false,
         tags: [{ name: "Phaser, JavaScript, HTML5", class: "t-phaser" }, { name: "2D", class: "t-2d" }, { name: "Pixel Art", class: "t-pixel" }, { name: "Plataformas", class: "t-platformer" }],
