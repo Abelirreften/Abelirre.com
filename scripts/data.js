@@ -35,7 +35,8 @@ const MY_GAMES = [
             description: `En este proyecto me encargo de la producción, el arte 2D y la programación. 
             <br>
             Somos un equipo de dos desarrolladores y ambos vamos a tener que absorber partes de otros roles, pero mi fuerte será el arte 2D y la direccón creatvia del proyecto.
-            Mi compañero se encargará principalmente de la programación y del diseño de niveles.
+            Mi compañero se encargará principalmente de la programación y del diseño de niveles. Aunque ambos estamos muy implicados en todo el diseño de sistemas de juego y en
+            crear unas bases sólidas a partir de las cuales construir el juego.
             `
         },
         role_en: {
@@ -44,19 +45,18 @@ const MY_GAMES = [
             <br>
             We are a team of two developers and both of us will have to absorb parts of other roles, but my strength will be the 2D art and the creative direction of the project.
             <br><br>
-            My partner will be mainly in charge of programming and level design.`
+            My partner will be mainly in charge of programming and level design. Although both of us are very involved in all the design of game systems and in creating a solid foundation from which to build the game.
+            `
         },
         skillsLearned: "",
         skillsLearned_en: "",
         techChallenges: [
             { tag: "Físicas 2D", description: "Movimiento fluído del personaje e interacción con el mundo." },
-            { tag: "Optimización", description: "Mejora del rendimiento en los sistemas de físicas." },
-            { tag: "Máquinas de estados", description: "Diseño e implementación de máquinas de estados para los personajes, enemigos y sistemas de juego." }
+            { tag: "Máquina de estados", description: "Diseño e implementación de una máquina de estados para el personajes. La máquina de estados se divide en dos partes: una controla el movimiento y otra las físicas del sistema alomántico de poderes." }
         ],
         techChallenges_en: [
             { tag: "2D Physics", description: "Smooth movement of the character and interaction with the world." },
-            { tag: "Optimization", description: "Performance improvement in the physics systems." },
-            { tag: "State machines", description: "Design and implementation of state machines for the characters, enemies and game systems." }
+            { tag: "State machines", description: "Design and implementation of state machines for the characters. The state machine is divided into two parts: one controls the movement and the other controls the physics of the allomantic power system." }
         ],
 
         type: "TFG"
@@ -787,6 +787,11 @@ const MY_GAMES = [
 
         type: "Uni Project"
     },
+    // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {
         id: "knightAdventure",
         title: "A Knight Adventure",

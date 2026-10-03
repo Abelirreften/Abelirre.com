@@ -238,7 +238,7 @@ h2 {
     width: 180px;
     border-radius: 20px;
     margin-bottom: 2rem;
-    animation: float 6s ease-in-out infinite;
+    animation: float 3s ease-in-out infinite;
     box-shadow: 0 0 30px rgba(133, 96, 219, 0.3);
 }
 
@@ -518,6 +518,8 @@ h2 {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
+    transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 /* Efecto Hover General */
