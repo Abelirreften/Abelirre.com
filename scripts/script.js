@@ -220,4 +220,24 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => navMenu.classList.remove('active'));
         });
     }
+
+    // NAVBAR HIDE/SHOW ON SCROLL
+    let lastScrollY = window.scrollY;
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (!navbar) return;
+        
+        // Prevent hiding when menu is open
+        const isMenuOpen = document.querySelector('.nav-menu.active');
+        if (isMenuOpen) return;
+
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            navbar.classList.add('nav-hidden');
+        } else {
+            navbar.classList.remove('nav-hidden');
+        }
+        lastScrollY = window.scrollY;
+    }, { passive: true });
+
 });
