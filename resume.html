@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abelirre - CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -462,6 +463,69 @@
             border: 1px solid #555;
             color: #a0a0b0;
         }
+    
+        @media screen and (max-width: 768px) {
+            body {
+                width: 100% !important;
+                min-height: auto !important;
+                padding-bottom: 140px !important;
+            }
+            .cv-page {
+                padding: 20px 15px !important;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr !important;
+                gap: 5px !important;
+            }
+            .skills-col ul {
+                margin-bottom: 0 !important;
+            }
+            .job-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            .job-date {
+                margin-top: 2px !important;
+                margin-bottom: 5px !important;
+            }
+            .header-contact {
+                flex-wrap: wrap !important;
+                gap: 5px 10px !important;
+            }
+            .header-contact span.pink-text {
+                display: none !important;
+            }
+            h1 { font-size: 1.8rem !important; }
+            h2 { font-size: 1.2rem !important; }
+            h3 { font-size: 1rem !important; }
+            p, li, .header-contact { font-size: 0.95rem !important; }
+
+            /* Floating Buttons adjustments */
+            .print-btn {
+                padding: 12px 10px !important;
+                font-size: 0.9rem !important;
+                width: calc(50% - 25px) !important;
+                text-align: center !important;
+                border-radius: 12px !important;
+            }
+            button.print-btn[onclick*="'index.html'"] {
+                left: 15px !important;
+                bottom: 15px !important;
+            }
+            button.print-btn[onclick*="openPrintModal"] {
+                right: 15px !important;
+                bottom: 15px !important;
+            }
+            button.print-btn[onclick*="toggleTheme"] {
+                left: 15px !important;
+                bottom: 75px !important;
+            }
+            button.print-btn[onclick*="'resume"] {
+                right: 15px !important;
+                bottom: 75px !important;
+            }
+        }
+
     </style>
 </head>
 
