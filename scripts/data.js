@@ -143,12 +143,12 @@ const MY_GAMES = [
         },
         roleImage: [
             {
-                src: "assets/images/TWRM_Juego/TWRM_escp_Full.png",
+                src: "assets/images/TWRM_Juego/TWRM_escp_FULL.png",
                 caption: "Modelo High Polly de la escopeta.",
                 caption_en: "High Polly model of the shootgun."
             },
             {
-                src: "assets/images/TWRM_Juego/TWRM_lwp_escp_Full.png",
+                src: "assets/images/TWRM_Juego/TWRM_lwp_escp_FULL.png",
                 caption: "Modelo Low Polly de la escopeta.",
                 caption_en: "Low Polly model of the shootgun."
             },
@@ -158,7 +158,7 @@ const MY_GAMES = [
                 caption_en: "HD Textures of the character."
             },
             {
-                src: "assets/images/TWRM_Juego/TWRM_PX_ch_FULL.png",
+                src: "assets/images/TWRM_Juego/TWRM_PX_ch_Full.png",
                 caption: "Texturas Pixel Art del personaje.",
                 caption_en: "Pixel Art Textures of the character."
             },
