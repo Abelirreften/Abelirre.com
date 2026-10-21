@@ -122,45 +122,101 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listen for language changes
     window.addEventListener('languageChanged', renderProjects);
 
-    // FETCH YOUTUBE VIDEOS
+    // FETCH YOUTUBE VIDEOS (YouTube Data API v3 oficial con soporte de caché)
     const ytContainer = document.getElementById('youtube-container');
-    const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${YOUTUBE_CHANNEL_ID}`;
-    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
+    const UPLOADS_PLAYLIST_ID = YOUTUBE_CHANNEL_ID.replace(/^UC/, 'UU');
+    const YT_VIDEOS_URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${UPLOADS_PLAYLIST_ID}&maxResults=4&key=${API_KEY}`;
+    const YT_CACHE_KEY = 'cached_youtube_videos_v1';
+    const YT_CACHE_EXPIRY = 60 * 60 * 1000; // 1 hora de caché en localStorage para optimizar cuota y velocidad
+
+    let loadedVideos = null;
+
+    const renderYouTubeVideos = (videos) => {
+        if (!ytContainer || !videos || videos.length === 0) {
+            if (ytContainer) {
+                ytContainer.innerHTML = `<p class="text-center">${typeof currentLanguage !== 'undefined' && currentLanguage === 'en' ? 'Could not load videos.' : 'No se pudieron cargar los vídeos.'}</p>`;
+            }
+            return;
+        }
+
+        const isEn = typeof currentLanguage !== 'undefined' && currentLanguage === 'en';
+        ytContainer.innerHTML = videos.map(video => {
+            const snippet = video.snippet;
+            const videoId = snippet.resourceId ? snippet.resourceId.videoId : '';
+            const videoLink = `https://www.youtube.com/watch?v=${videoId}`;
+            const thumbnail = snippet.thumbnails?.maxres?.url || snippet.thumbnails?.high?.url || snippet.thumbnails?.medium?.url || `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+            const pubDate = new Date(snippet.publishedAt).toLocaleDateString(isEn ? 'en-US' : 'es-ES');
+
+            return `
+            <div class="project-card animate-on-scroll">
+                <div class="card-media">
+                    <a href="${videoLink}" target="_blank" rel="noopener noreferrer" style="display:block; width:100%; height:100%; position:relative;">
+                        <img src="${thumbnail}" alt="${snippet.title}" style="width:100%; height:100%; object-fit:cover; display:block;">
+                        <div class="play-overlay">▶</div>
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title" style="font-size: 1rem; line-height: 1.3; margin-bottom: 10px;">${snippet.title}</h3>
+                    <p class="card-desc">${isEn ? 'Published on: ' : 'Publicado el: '}${pubDate}</p>
+                    <a href="${videoLink}" target="_blank" rel="noopener noreferrer" class="card-link">${isEn ? 'Watch on YouTube →' : 'Ver en YouTube →'}</a>
+                </div>
+            </div>
+            `;
+        }).join('');
+
+        observeAnimations();
+    };
 
     if (ytContainer) {
-        fetch(API_URL)
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'ok') {
-                    const videos = data.items.slice(0, 4); // Mostrar últimos 4 vídeos para diseño compacto
-                    ytContainer.innerHTML = videos.map(video => {
-                        const videoId = video.link.split('v=')[1];
-                        const thumbnail = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
-                        return `
-                        <div class="project-card animate-on-scroll">
-                            <div class="card-media">
-                                <a href="${video.link}" target="_blank" style="display:block; width:100%; height:100%; position:relative;">
-                                    <img src="${thumbnail}" alt="${video.title}" style="width:100%; height:100%; object-fit:cover; display:block;">
-                                    <div class="play-overlay">▶</div>
-                                </a>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title" style="font-size: 1rem; line-height: 1.3; margin-bottom: 10px;">${video.title}</h3>
-                                <p class="card-desc">Publicado el: ${new Date(video.pubDate).toLocaleDateString()}</p>
-                                <a href="${video.link}" target="_blank" class="card-link">Ver en YouTube →</a>
-                            </div>
-                        </div>
-                        `;
-                    }).join('');
-                    observeAnimations();
-                } else {
-                    ytContainer.innerHTML = `<p class="text-center">No se pudieron cargar los vídeos.</p>`;
+        // 1. Intentar cargar desde caché para carga instantánea
+        try {
+            const cached = localStorage.getItem(YT_CACHE_KEY);
+            if (cached) {
+                const parsed = JSON.parse(cached);
+                if (Date.now() - parsed.timestamp < YT_CACHE_EXPIRY && Array.isArray(parsed.data)) {
+                    loadedVideos = parsed.data;
+                    renderYouTubeVideos(loadedVideos);
                 }
-            })
-            .catch(error => {
-                console.error('Error cargando YouTube:', error);
-                ytContainer.innerHTML = `<p class="text-center">Error de conexión con YouTube.</p>`;
-            });
+            }
+        } catch (e) {
+            console.warn('No se pudo acceder al almacenamiento local:', e);
+        }
+
+        // 2. Si no hay caché válida o ha expirado, consultar la API oficial
+        if (!loadedVideos && API_KEY) {
+            fetch(YT_VIDEOS_URL)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`YouTube API error: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.items && data.items.length > 0) {
+                        loadedVideos = data.items;
+                        renderYouTubeVideos(loadedVideos);
+                        try {
+                            localStorage.setItem(YT_CACHE_KEY, JSON.stringify({
+                                data: loadedVideos,
+                                timestamp: Date.now()
+                            }));
+                        } catch (e) { /* localStorage deshabilitado o lleno */ }
+                    } else {
+                        ytContainer.innerHTML = `<p class="text-center">${typeof currentLanguage !== 'undefined' && currentLanguage === 'en' ? 'Could not load videos.' : 'No se pudieron cargar los vídeos.'}</p>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando YouTube:', error);
+                    ytContainer.innerHTML = `<p class="text-center">${typeof currentLanguage !== 'undefined' && currentLanguage === 'en' ? 'YouTube connection error.' : 'Error de conexión con YouTube.'}</p>`;
+                });
+        }
+
+        // 3. Re-renderizar si el usuario cambia de idioma
+        window.addEventListener('languageChanged', () => {
+            if (loadedVideos) {
+                renderYouTubeVideos(loadedVideos);
+            }
+        });
     }
 
     // YOUTUBE STATS COUNTUP
@@ -196,10 +252,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.items && data.items.length > 0) {
                     const stats = data.items[0].statistics;
 
-                    document.getElementById('stat-subs').setAttribute('data-target', stats.subscriberCount);
-                    document.getElementById('stat-views').setAttribute('data-target', stats.viewCount);
-                    document.getElementById('stat-videos').setAttribute('data-target', stats.videoCount);
-                    document.getElementById('stat-hours').setAttribute('data-target', MANUAL_WATCH_HOURS);
+                    const subsEl = document.getElementById('stat-subs');
+                    const viewsEl = document.getElementById('stat-views');
+                    const videosEl = document.getElementById('stat-videos');
+                    const hoursEl = document.getElementById('stat-hours');
+
+                    if (subsEl) subsEl.setAttribute('data-target', stats.subscriberCount);
+                    if (viewsEl) viewsEl.setAttribute('data-target', stats.viewCount);
+                    if (videosEl) videosEl.setAttribute('data-target', stats.videoCount);
+                    if (hoursEl) hoursEl.setAttribute('data-target', MANUAL_WATCH_HOURS);
+
+                    [subsEl, viewsEl, videosEl, hoursEl].forEach(el => {
+                        if (el && el.classList.contains('visible') && el.innerText === '0') {
+                            runCountUp(el);
+                        }
+                    });
                 }
             })
             .catch(err => console.error("Error cargando stats:", err));
