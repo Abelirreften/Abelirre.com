@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abelirre - CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <style>
         /* Base / Reset */
         @page {
@@ -20,7 +20,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Geist', sans-serif;
             background-color: #0a0a0f;
             color: #d0d0e0;
             margin: 0 auto;
@@ -226,7 +226,7 @@
             border: none;
             padding: 12px 24px;
             border-radius: 8px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Geist', sans-serif;
             font-weight: 600;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(238, 7, 254, 0.4);
@@ -439,7 +439,7 @@
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Geist', sans-serif;
             transition: 0.2s;
         }
 
@@ -463,42 +463,63 @@
             border: 1px solid #555;
             color: #a0a0b0;
         }
-    
+
         @media screen and (max-width: 768px) {
             body {
                 width: 100% !important;
                 min-height: auto !important;
                 padding-bottom: 140px !important;
             }
+
             .cv-page {
                 padding: 20px 15px !important;
             }
+
             .skills-grid {
                 grid-template-columns: 1fr !important;
                 gap: 5px !important;
             }
+
             .skills-col ul {
                 margin-bottom: 0 !important;
             }
+
             .job-header {
                 flex-direction: column !important;
                 align-items: flex-start !important;
             }
+
             .job-date {
                 margin-top: 2px !important;
                 margin-bottom: 5px !important;
             }
+
             .header-contact {
                 flex-wrap: wrap !important;
                 gap: 5px 10px !important;
             }
+
             .header-contact span.pink-text {
                 display: none !important;
             }
-            h1 { font-size: 1.8rem !important; }
-            h2 { font-size: 1.2rem !important; }
-            h3 { font-size: 1rem !important; }
-            p, li, .header-contact { font-size: 0.95rem !important; }
+
+            h1 {
+                font-size: 1.8rem !important;
+            }
+
+            h2 {
+                font-size: 1.2rem !important;
+            }
+
+            h3 {
+                font-size: 1rem !important;
+            }
+
+            p,
+            li,
+            .header-contact {
+                font-size: 0.95rem !important;
+            }
 
             /* Floating Buttons adjustments */
             .print-btn {
@@ -508,31 +529,34 @@
                 text-align: center !important;
                 border-radius: 12px !important;
             }
+
             button.print-btn[onclick*="'index.html'"] {
                 left: 15px !important;
                 bottom: 15px !important;
             }
+
             button.print-btn[onclick*="openPrintModal"] {
                 right: 15px !important;
                 bottom: 15px !important;
             }
+
             button.print-btn[onclick*="toggleTheme"] {
                 left: 15px !important;
                 bottom: 75px !important;
             }
+
             button.print-btn[onclick*="'resume"] {
                 right: 15px !important;
                 bottom: 75px !important;
             }
         }
-
     </style>
 </head>
 
 <body class="light-theme">
 
     <button class="print-btn" onclick="window.location.href='index.html'"
-        style="left: 20px; right: auto; bottom: 20px; background: #333333;">Volver al Porfolio</button>
+        style="left: 20px; right: auto; bottom: 20px; background: #333333;">Volver al Portafolio</button>
     <button class="print-btn" onclick="window.location.href='resume_en.html'"
         style="bottom: 70px; background: #6400FF;">English Version</button>
     <button class="print-btn" onclick="toggleTheme()" style="bottom: 120px; background: #fe8948;">Modo Claro /
@@ -545,7 +569,7 @@
             <div class="header-contact">
                 <span>Madrid, España</span>
                 <span class="pink-text">•</span>
-                <a href="https://abelirreften.github.io/Abelirre.com/" target="_blank">Portfolio</a>
+                <a href="https://abelirreften.github.io/Abelirre.com/" target="_blank">Portafolio</a>
                 <span class="pink-text">•</span>
                 <a href="https://abelirre.itch.io" target="_blank">Itch.io</a>
                 <span class="pink-text">•</span>
@@ -618,7 +642,7 @@
         <div class="experience-item">
             <div class="exp-header">
                 <div class="exp-role-company">
-                    <span class="exp-role">Artista 3D</span> <span class="exp-company">| They Wont Retain Me</span>
+                    <span class="exp-role">Artista 3D</span> <span class="exp-company">| They Won't Retain Me</span>
                 </div>
                 <div class="exp-meta">Finalizado (3 meses) | Unreal Engine</div>
             </div>

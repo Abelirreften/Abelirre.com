@@ -68,19 +68,19 @@ const MY_GAMES = [
     // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     {
         id: "twrm",
-        title: "They Wont Retain Me",
-        title_en: "They Wont Retain Me",
+        title: "They Won't Retain Me",
+        title_en: "They Won't Retain Me",
         description: "El infierno no quiere que escapes. Sobrevive a hordas de pecadores mientras consigues habilidades cada vez más poderosas.",
         description_en: "Hell doesn't want you to escape. Survive hordes of sinners while getting stronger and stronger abilities.",
 
-        extendedDescription: `They Wont Retain Me es un intenso shooter roguelite donde un pecador violento lucha por escapar de los Círculos del Infierno, 
+        extendedDescription: `They Won't Retain Me es un intenso shooter roguelite donde un pecador violento lucha por escapar de los Círculos del Infierno, 
         masacrando hordas demoníacas con un arsenal evolutivo para alcanzar la superficie.
         <br><br>
         En They Won't Retain Me, controlas a un pecador bendecido por los Dioses para redimirse. Basado en el Infierno de Dante, deberás matar a otros pecadores y demonios que quieren acabar contigo y escalar
         por los diferentes Círculos del Infierno hasta alcanzar la superficie. Para ello, deberás usar tus armas, con las que conseguirás experiencia, subirás de nivel y podrás seleccionar una 
         mejora (o Bendición de los Dioses) de entre tres aleatorias. Estas mejoras subirán tus estadísticas y desbloquearán habilidades nuevas. Hordas interminables intentarán frenarte y solo tu habilidad e inteligencia podrá mantenerte con vida.`,
 
-        extendedDescription_en: `They Wont Retain Me is an intense shooter rogelite where a violent sinner fights to escape from the Circles of Hell, 
+        extendedDescription_en: `They Won't Retain Me is an intense shooter rogelite where a violent sinner fights to escape from the Circles of Hell, 
         massacring demonic hordes with an evolutionary arsenal to reach the surface.
         <br><br>
         In They Won't Retain Me, you control a sinner blessed by the Gods to redeem themselves. Based on Dante's Inferno, you will have to kill other sinners and demons that want to destroy you and climb

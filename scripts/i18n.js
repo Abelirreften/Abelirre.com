@@ -2,14 +2,14 @@ const translations = {
     es: {
         nav_home: "Inicio",
         nav_about: "Sobre Mí",
-        nav_projects: "Porfolio",
+        nav_projects: "Portafolio",
         nav_youtube: "YouTube",
         nav_social: "Mis Redes",
         nav_contact: "Contacto",
         hero_role: "Game Developer y Creador de Contenido",
         hero_subtitle: "Cuento historias con significado mediante juegos, vídeos y música.<br>Pasión y disciplina.",
         btn_about: "Conóceme",
-        btn_portfolio: "Porfolio",
+        btn_portfolio: "Portafolio",
         btn_cv: "Currículum",
         hero_status: "Madrid, ES · Open to Work: Remote & Relocate",
         title_projects: "GAME DEV",
@@ -64,7 +64,7 @@ const translations = {
         title_contact: "CONTÁCTAME",
         desc_contact: "¿Tienes preguntas, sugerencias o quieres colaborar?<br>",
         btn_email: "Mandar un Email",
-        footer_text: "&copy; 2026 Abelirre · Game Developer y Creador de Contenido · Madrid <br>•<br> Web creada en Diciembre de 2025, cualquier porfolio parecido es una copia."
+        footer_text: "&copy; 2026 Abelirre · Game Developer y Creador de Contenido · Madrid <br>•<br> Web creada en Diciembre de 2025, cualquier portafolio parecido es una copia."
     },
     en: {
         nav_home: "Home",
